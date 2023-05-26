@@ -10,129 +10,44 @@ class XylophoneApp extends StatelessWidget {
     player.play(AssetSource('note$soundNumber.wav'));
   }
 
+  Container buildKey(soundNumber, givenColor) {
+    return Container(
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10.0),
+          color: givenColor),
+      width: double.infinity,
+      height: 60.0,
+      child: TextButton(
+        onPressed: () {
+          playSound(soundNumber);
+        },
+        child: Text(
+          'Sound 1',
+          style: TextStyle(color: Colors.white),
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        backgroundColor: Colors.black54,
         body: Padding(
           padding: const EdgeInsets.symmetric(vertical: 50.0, horizontal: 20.0),
           child: SafeArea(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Container(
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10.0),
-                      color: Colors.green),
-                  width: double.infinity,
-                  height: 60.0,
-                  child: TextButton(
-                    onPressed: () {
-                      playSound(1);
-                    },
-                    child: Text(
-                      'Sound 1',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ),
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10.0),
-                      color: Colors.yellow[700]),
-                  width: double.infinity,
-                  height: 60.0,
-                  child: TextButton(
-                    onPressed: () {
-                      playSound(2);
-                    },
-                    child: Text(
-                      'Sound 2',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ),
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10.0),
-                      color: Colors.blueAccent),
-                  width: double.infinity,
-                  height: 60.0,
-                  child: TextButton(
-                    onPressed: () {
-                      playSound(3);
-                    },
-                    child: Text(
-                      'Sound 3',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ),
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10.0),
-                      color: Colors.red[700]),
-                  width: double.infinity,
-                  height: 60.0,
-                  child: TextButton(
-                    onPressed: () {
-                      playSound(4);
-                    },
-                    child: Text(
-                      'Sound 4',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ),
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10.0),
-                      color: Colors.deepPurpleAccent),
-                  width: double.infinity,
-                  height: 60.0,
-                  child: TextButton(
-                    onPressed: () {
-                      playSound(5);
-                    },
-                    child: Text(
-                      'Sound 5',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ),
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10.0),
-                      color: Colors.brown),
-                  width: double.infinity,
-                  height: 60.0,
-                  child: TextButton(
-                    onPressed: () {
-                      playSound(6);
-                    },
-                    child: Text(
-                      'Sound 6',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ),
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10.0),
-                      color: Colors.blueGrey),
-                  width: double.infinity,
-                  height: 60.0,
-                  child: TextButton(
-                    onPressed: () {
-                      playSound(7);
-                    },
-                    child: Text(
-                      'Sound 7',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ),
-                ),
+               buildKey(1,Colors.green),
+                buildKey(2,Colors.blue[700]),
+                buildKey(3,Colors.brown[700]),
+                buildKey(4,Colors.yellow[700]),
+                buildKey(5,Colors.pink[700]),
+                buildKey(6,Colors.red[700]),
+                buildKey(7,Colors.cyan[700]),
               ],
             ),
           ),
