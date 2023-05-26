@@ -4,13 +4,19 @@ import 'package:flutter/material.dart';
 void main() => runApp(XylophoneApp());
 
 class XylophoneApp extends StatelessWidget {
+
+  void playSound(int soundNumber) {
+    AudioPlayer player = AudioPlayer();
+    player.play(AssetSource('note$soundNumber.wav'));
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Padding(
-          padding: const EdgeInsets.all(20.0),
+          padding: const EdgeInsets.symmetric(vertical: 50.0, horizontal: 20.0),
           child: SafeArea(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -23,8 +29,7 @@ class XylophoneApp extends StatelessWidget {
                   height: 60.0,
                   child: TextButton(
                     onPressed: () {
-                      AudioPlayer player = AudioPlayer();
-                      player.play(AssetSource('note1.wav'));
+                      playSound(1);
                     },
                     child: Text(
                       'Sound 1',
@@ -35,13 +40,12 @@ class XylophoneApp extends StatelessWidget {
                 Container(
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10.0),
-                      color: Colors.yellow),
+                      color: Colors.yellow[700]),
                   width: double.infinity,
                   height: 60.0,
                   child: TextButton(
                     onPressed: () {
-                      AudioPlayer player = AudioPlayer();
-                      player.play(AssetSource('note2.wav'));
+                      playSound(2);
                     },
                     child: Text(
                       'Sound 2',
@@ -57,8 +61,7 @@ class XylophoneApp extends StatelessWidget {
                   height: 60.0,
                   child: TextButton(
                     onPressed: () {
-                      AudioPlayer player = AudioPlayer();
-                      player.play(AssetSource('note3.wav'));
+                      playSound(3);
                     },
                     child: Text(
                       'Sound 3',
@@ -69,13 +72,12 @@ class XylophoneApp extends StatelessWidget {
                 Container(
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10.0),
-                      color: Colors.red),
+                      color: Colors.red[700]),
                   width: double.infinity,
                   height: 60.0,
                   child: TextButton(
                     onPressed: () {
-                      AudioPlayer player = AudioPlayer();
-                      player.play(AssetSource('note4.wav'));
+                      playSound(4);
                     },
                     child: Text(
                       'Sound 4',
@@ -91,8 +93,7 @@ class XylophoneApp extends StatelessWidget {
                   height: 60.0,
                   child: TextButton(
                     onPressed: () {
-                      AudioPlayer player = AudioPlayer();
-                      player.play(AssetSource('note5.wav'));
+                      playSound(5);
                     },
                     child: Text(
                       'Sound 5',
@@ -108,8 +109,7 @@ class XylophoneApp extends StatelessWidget {
                   height: 60.0,
                   child: TextButton(
                     onPressed: () {
-                      AudioPlayer player = AudioPlayer();
-                      player.play(AssetSource('note6.wav'));
+                      playSound(6);
                     },
                     child: Text(
                       'Sound 6',
@@ -125,8 +125,7 @@ class XylophoneApp extends StatelessWidget {
                   height: 60.0,
                   child: TextButton(
                     onPressed: () {
-                      AudioPlayer player = AudioPlayer();
-                      player.play(AssetSource('note7.wav'));
+                      playSound(7);
                     },
                     child: Text(
                       'Sound 7',
